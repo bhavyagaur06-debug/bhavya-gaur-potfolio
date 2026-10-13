@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhavya Gaur | B.Tech 1st Year Portfolio</title>
+  
+  <!-- Meta tags for SEO & Social Sharing -->
+  <meta name="description" content="Personal Portfolio of a B.Tech 1st Year Engineering Student. Exploring software development, creative design, and cutting-edge tech." />
+  
+  <!-- Google Fonts: Inter & Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome 6 for Social & Tech Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ambient Glow & Dynamic Background -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+  <canvas id="starfield"></canvas>
+
+  <!-- Sticky Glassmorphic Navbar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Bhavya</span>
+        <span class="logo-dot">.</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#character" class="nav-link">Desk Lounge</a></li>
+        <li><a href="#about" class="nav-link">About & Hobbies</a></li>
+        <li><a href="#games" class="nav-link">Gaming</a></li>
+        <li><a href="#contact" class="nav-link">Connect</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-sm btn-primary">
+          <span>Let's Talk</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============================================== -->
+    <!-- SECTION 1: HOME / HERO SECTION                  -->
+    <!-- ============================================== -->
+    <section id="home" class="section hero-section">
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <!-- University Badge -->
+          <div class="hero-badge">
+            <span class="pulse-indicator"></span>
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span id="display-uni">B.Tech 1st Year • Computer Science & Engineering</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text" id="display-name">Bhavya Gaur  </span> 👋
+          </h1>
+
+          <div class="typing-container">
+            <span class="typing-prefix">I am an </span>
+            <span class="typing-text" id="typing-text"></span>
+            <span class="typing-cursor">|</span>
+          </div>
+
+          <p class="hero-intro" id="display-intro">
+            Passionate first-year engineering student building the foundation for tomorrow's technology.
+            Obsessed with clean code, gaming worlds, user experience, and turning creative ideas into working software.
+          </p>
+
+          <!-- Status & Highlights Pill Grid -->
+          <div class="hero-highlights">
+            <div class="highlight-item">
+              <i class="fa-solid fa-laptop-code"></i>
+              <span>Learning C, Python & Web Dev</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-gamepad"></i>
+              <span>Gamer & Tech Tinkerer</span>
+            </div>
+            <div class="highlight-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>India</span>
+            </div>
+          </div>
+
+          <!-- Hero Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#character" class="btn btn-primary">
+              <span>Meet My Desk Buddy</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <i class="fa-solid fa-id-card"></i>
+              <span>Contact Cards</span>
+            </a>
+          </div>
+
+          <!-- Quick Social Bar -->
+          <div class="hero-social-mini">
+            <span class="mini-label">Quick Connect:</span>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="mini-icon ig" title="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="mini-icon in" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://snapchat.com" target="_blank" rel="noopener noreferrer" class="mini-icon snap" title="Snapchat">
+              <i class="fa-brands fa-snapchat"></i>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="mini-icon gh" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Profile Photo Card -->
+        <div class="hero-visual">
+          <div class="profile-card-wrapper">
+            <div class="profile-card-glow"></div>
+            <div class="profile-card">
+              <div class="profile-image-container">
+                <!-- User Profile Image (With Fallback SVG Avatar) -->
+                <img src="image.jpg"
+                     alt="Bhavya Gaur Profile Photo" 
+                     class="profile-img" 
+                     id="profile-img" />
+                <div class="online-badge" title="Currently Online & Coding">
+                  <span class="online-dot"></span>
+                </div>
+              </div>
+              
+              <div class="profile-info">
+                <h3 class="profile-name">Bhavya Gaur</h3>
+                <p class="profile-role">B.Tech Undergrad</p>
+                <div class="profile-tags">
+                  <span class="profile-tag">🚀 1st Year</span>
+                  <span class="profile-tag">💻 CS / Eng</span>
+                  <span class="profile-tag">✨ Creator</span>
+                </div>
+              </div>
+
+              <div class="profile-stats">
+                <div class="p-stat">
+                  <span class="stat-num">Year 1</span>
+                  <span class="stat-desc">Semester II</span>
+                </div>
+                <div class="p-stat-divider"></div>
+                <div class="p-stat">
+                  <span class="stat-num">4+</span>
+                  <span class="stat-desc">Languages</span>
+                </div>
+                <div class="p-stat-divider"></div>
+                <div class="p-stat">
+                  <span class="stat-num">100%</span>
+                  <span class="stat-desc">Curiosity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- INTERACTIVE BOY AT WORKSPACE (EYES TRACK MOUSE)-->
+    <!-- ============================================== -->
+    <section id="character" class="section character-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Interactive Space</span>
+          </div>
+          <h2 class="section-title">The Late Night <span class="gradient-text">Coder Boy</span></h2>
+          <p class="section-subtitle">
+            Move your mouse cursor anywhere on the screen! His eyes will follow your every move while he works on his MacBook.
+          </p>
+        </div>
+
+        <div class="workspace-stage">
+          <!-- Interactive Status Bar -->
+          <div class="macbook-status-hud">
+            <div class="hud-item">
+              <span class="hud-label">STATUS</span>
+              <span class="hud-value"><span class="terminal-blink">●</span> Debugging Code</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">DEVICE</span>
+              <span class="hud-value">MacBook Pro M-Series</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">BEVERAGE</span>
+              <span class="hud-value">Hot Coffee ☕</span>
+            </div>
+            <div class="hud-item">
+              <span class="hud-label">EYE TRACKING</span>
+              <span class="hud-value active-tracking" id="tracking-status">Active [Tracking Mouse]</span>
+            </div>
+          </div>
+
+          <!-- THE CODER BOY & MACBOOK SVG SCENE -->
+          <div class="svg-container">
+            <svg id="coder-scene" viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Wall Ambient Glow -->
+                <radialGradient id="roomGlow" cx="50%" cy="40%" r="50%">
+                  <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.35"/>
+                  <stop offset="50%" stop-color="#1e1b4b" stop-opacity="0.2"/>
+                  <stop offset="100%" stop-color="#0b0f19" stop-opacity="0"/>
+                </radialGradient>
+
+                <!-- MacBook Screen Ambient Reflection Glow -->
+                <linearGradient id="macScreenGlow" x1="0%" y1="100%" x2="0%" y2="0%">
+                  <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.45"/>
+                  <stop offset="100%" stop-color="#818cf8" stop-opacity="0.05"/>
+                </linearGradient>
+
+                <!-- Chair Gradient -->
+                <linearGradient id="chairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#1f2937"/>
+                  <stop offset="50%" stop-color="#111827"/>
+                  <stop offset="100%" stop-color="#030712"/>
+                </linearGradient>
+
+                <!-- Hoodie Gradient -->
+                <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="70%" stop-color="#4338ca"/>
+                  <stop offset="100%" stop-color="#312e81"/>
+                </linearGradient>
+
+                <!-- Skin Tone Gradient -->
+                <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#ffdfc4"/>
+                  <stop offset="100%" stop-color="#f0b892"/>
+                </linearGradient>
+
+                <!-- Hair Gradient -->
+                <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#2d2a3e"/>
+                  <stop offset="100%" stop-color="#121118"/>
+                </linearGradient>
+
+                <!-- Desk Surface Gradient -->
+                <linearGradient id="deskGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1e293b"/>
+                  <stop offset="15%" stop-color="#0f172a"/>
+                  <stop offset="100%" stop-color="#020617"/>
+                </linearGradient>
+
+                <!-- Metallic Apple Laptop Aluminum -->
+                <linearGradient id="macMetal" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#cbd5e1"/>
+                  <stop offset="50%" stop-color="#94a3b8"/>
+                  <stop offset="100%" stop-color="#64748b"/>
+                </linearGradient>
+
+                <!-- Laptop Display Glass -->
+                <linearGradient id="macDisplay" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#0369a1"/>
+                  <stop offset="50%" stop-color="#0284c7"/>
+                  <stop offset="100%" stop-color="#38bdf8"/>
+                </linearGradient>
+
+                <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="6" result="blur"/>
+                  <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                </filter>
+              </defs>
+
+              <!-- Ambient Backdrop behind Desk -->
+              <rect x="50" y="50" width="800" height="550" rx="30" fill="url(#roomGlow)" />
+
+              <!-- Window / Wall Tech Poster -->
+              <g class="wall-decor">
+                <rect x="120" y="100" width="140" height="110" rx="12" fill="#111827" stroke="#374151" stroke-width="2"/>
+                <circle cx="150" cy="130" r="10" fill="#3b82f6" opacity="0.8"/>
+                <path d="M 170 128 L 230 128" stroke="#4b5563" stroke-width="4" stroke-linecap="round"/>
+                <path d="M 140 160 L 235 160" stroke="#3b82f6" stroke-width="2"/>
+                <path d="M 140 175 L 210 175" stroke="#10b981" stroke-width="2"/>
+                <path d="M 140 190 L 180 190" stroke="#f59e0b" stroke-width="2"/>
+                <text x="190" y="195" fill="#9ca3af" font-family="'JetBrains Mono', monospace" font-size="10">git push</text>
+              </g>
+
+              <!-- Futuristic Floating Shelves & Plant -->
+              <g class="shelf-area">
+                <rect x="640" y="130" width="150" height="10" rx="5" fill="#334155"/>
+                <!-- Plant Pot -->
+                <path d="M 660 130 L 665 105 L 685 105 L 690 130 Z" fill="#475569"/>
+                <!-- Leaves -->
+                <path d="M 675 105 Q 655 80 660 70 Q 675 80 675 105" fill="#10b981"/>
+                <path d="M 675 105 Q 695 75 700 80 Q 685 95 675 105" fill="#34d399"/>
+                <path d="M 675 100 Q 675 65 680 60 Q 685 80 675 100" fill="#059669"/>
+                <!-- Books -->
+                <rect x="710" y="85" width="12" height="45" rx="2" fill="#ef4444"/>
+                <rect x="725" y="75" width="14" height="55" rx="2" fill="#3b82f6"/>
+                <rect x="742" y="90" width="12" height="40" rx="2" fill="#eab308"/>
+              </g>
+
+              <!-- ============================================== -->
+              <!-- ERGONOMIC GAMING / OFFICE CHAIR               -->
+              <!-- ============================================== -->
+              <g id="chair-group">
+                <!-- Chair Swivel Base & Wheels -->
+                <ellipse cx="450" cy="610" rx="140" ry="18" fill="#000000" opacity="0.45"/>
+                <path d="M 450 490 L 450 590" stroke="#475569" stroke-width="18" stroke-linecap="round"/>
+                <!-- 5-Star Spider Leg Base -->
+                <path d="M 450 585 L 350 605 M 450 585 L 550 605 M 450 585 L 420 615 M 450 585 L 480 615" stroke="#334155" stroke-width="12" stroke-linecap="round"/>
+                <!-- Caster Wheels -->
+                <circle cx="345" cy="607" r="8" fill="#0f172a"/>
+                <circle cx="555" cy="607" r="8" fill="#0f172a"/>
+                <circle cx="415" cy="617" r="8" fill="#0f172a"/>
+                <circle cx="485" cy="617" r="8" fill="#0f172a"/>
+
+                <!-- Chair Backrest & Headrest -->
+                <path d="M 370 210 Q 450 190 530 210 Q 550 340 520 460 Q 450 480 380 460 Q 350 340 370 210 Z" fill="url(#chairGrad)" stroke="#38bdf8" stroke-width="2.5"/>
+                <!-- Ergonomic Lumbar & Accents -->
+                <path d="M 400 240 Q 450 230 500 240 Q 515 350 495 440 Q 450 450 405 440 Q 385 350 400 240 Z" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+                <!-- Chair Headrest -->
+                <rect x="405" y="160" width="90" height="50" rx="15" fill="#1e293b" stroke="#38bdf8" stroke-width="2"/>
+                <!-- Armrests -->
+                <rect x="330" y="380" width="40" height="15" rx="6" fill="#334155"/>
+                <path d="M 345 395 L 350 450" stroke="#1e293b" stroke-width="10"/>
+                <rect x="530" y="380" width="40" height="15" rx="6" fill="#334155"/>
+                <path d="M 555 395 L 550 450" stroke="#1e293b" stroke-width="10"/>
+              </g>
+
+              <!-- ============================================== -->
+              <!-- THE BOY CHARACTER                             -->
+              <!-- ============================================== -->
+              <g id="boy-character">
+                <!-- Body / Torso (Modern Hoodie) -->
+                <path d="M 390 350 Q 450 340 510 350 L 535 500 Q 450 515 365 500 Z" fill="url(#hoodieGrad)" />
+                
+                <!-- Hoodie Drawstrings & Seams -->
+                <path d="M 438 355 Q 436 410 435 435" stroke="#e0e7ff" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="435" cy="437" r="3.5" fill="#cbd5e1"/>
+                <path d="M 462 355 Q 464 410 465 435" stroke="#e0e7ff" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="465" cy="437" r="3.5" fill="#cbd5e1"/>
+                <!-- Hoodie Pocket line -->
+                <path d="M 410 450 Q 450 460 490 450 L 485 490 Q 450 495 415 490 Z" fill="#3730a3" opacity="0.6"/>
+
+                <!-- Left Arm reaching toward MacBook -->
+                <path d="M 380 365 Q 330 430 380 470 L 400 455 Q 360 420 400 375 Z" fill="#4338ca"/>
+                <!-- Right Arm reaching toward MacBook -->
+                <path d="M 520 365 Q 570 430 520 470 L 500 455 Q 540 420 500 375 Z" fill="#4338ca"/>
+
+                <!-- Hands on Keyboard area -->
+                <ellipse cx="400" cy="460" rx="14" ry="9" fill="url(#skinGrad)"/>
+                <ellipse cx="500" cy="460" rx="14" ry="9" fill="url(#skinGrad)"/>
+
+                <!-- Neck -->
+                <path d="M 432 315 L 432 355 Q 450 365 468 355 L 468 315 Z" fill="url(#skinGrad)"/>
+                <!-- Shadow under chin -->
+                <path d="M 432 320 Q 450 335 468 320 Z" fill="#d97706" opacity="0.25"/>
+
+                <!-- Head Base -->
+                <ellipse cx="450" cy="275" rx="42" ry="48" fill="url(#skinGrad)"/>
+
+                <!-- Ears -->
+                <circle cx="406" cy="275" r="10" fill="url(#skinGrad)"/>
+                <circle cx="406" cy="275" r="5" fill="#e2a77b"/>
+                <circle cx="494" cy="275" r="10" fill="url(#skinGrad)"/>
+                <circle cx="494" cy="275" r="5" fill="#e2a77b"/>
+
+                <!-- Trendy Over-Ear Developer Headphones -->
+                <g id="headphones">
+                  <!-- Headband -->
+                  <path d="M 398 260 Q 450 190 502 260" fill="none" stroke="#0f172a" stroke-width="12" stroke-linecap="round"/>
+                  <path d="M 405 255 Q 450 198 495 255" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+                  <!-- Left Cushion -->
+                  <rect x="394" y="250" width="16" height="42" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                  <circle cx="402" cy="271" r="4" fill="#38bdf8"/>
+                  <!-- Right Cushion -->
+                  <rect x="490" y="250" width="16" height="42" rx="8" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+                  <circle cx="498" cy="271" r="4" fill="#38bdf8"/>
+                </g>
+
+                <!-- Stylish Hair (Spiky Modern Cut) -->
+                <path d="M 408 265 C 400 220 440 205 450 205 C 475 205 500 220 492 265 C 485 240 480 230 460 225 C 440 220 425 240 408 265 Z" fill="url(#hairGrad)"/>
+                <path d="M 412 245 C 420 225 440 215 455 215 C 470 215 480 228 488 245 C 470 235 455 238 440 235 C 428 232 418 240 412 245 Z" fill="#37334d"/>
+
+                <!-- Eyebrows (Expressive & Alert) -->
+                <path d="M 425 254 Q 436 248 444 252" stroke="#2d2a3e" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M 456 252 Q 464 248 475 254" stroke="#2d2a3e" stroke-width="3.5" stroke-linecap="round"/>
+
+                <!-- ========================================== -->
+                <!-- EYES SYSTEM (INTERACTIVE MOUSE TRACKING)    -->
+                <!-- ========================================== -->
+                <g id="eyes-container">
+                  <!-- LEFT EYE -->
+                  <g class="eye-wrapper" id="left-eye-group">
+                    <!-- Left Eye Sclera (White background) -->
+                    <ellipse id="eye-left-socket" cx="435" cy="268" rx="10" ry="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+                    
+                    <!-- Left Pupil (Will translate dynamically with mouse) -->
+                    <g id="pupil-left">
+                      <!-- Iris -->
+                      <circle cx="435" cy="268" r="5.2" fill="#0284c7" />
+                      <!-- Pupil Center -->
+                      <circle cx="435" cy="268" r="3.2" fill="#0f172a" />
+                      <!-- Catchlight Glow (Reflection) -->
+                      <circle cx="433.5" cy="266.5" r="1.5" fill="#ffffff" />
+                    </g>
+
+                    <!-- Left Eyelid Blink Cover -->
+                    <ellipse class="eyelid eyelid-left" cx="435" cy="268" rx="10.5" ry="8.5" fill="url(#skinGrad)" />
+                  </g>
+
+                  <!-- RIGHT EYE -->
+                  <g class="eye-wrapper" id="right-eye-group">
+                    <!-- Right Eye Sclera (White background) -->
+                    <ellipse id="eye-right-socket" cx="465" cy="268" rx="10" ry="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="0.8"/>
+                    
+                    <!-- Right Pupil (Will translate dynamically with mouse) -->
+                    <g id="pupil-right">
+                      <!-- Iris -->
+                      <circle cx="465" cy="268" r="5.2" fill="#0284c7" />
+                      <!-- Pupil Center -->
+                      <circle cx="465" cy="268" r="3.2" fill="#0f172a" />
+                      <!-- Catchlight Glow (Reflection) -->
+                      <circle cx="463.5" cy="266.5" r="1.5" fill="#ffffff" />
+                    </g>
+
+                    <!-- Right Eyelid Blink Cover -->
+                    <ellipse class="eyelid eyelid-right" cx="465" cy="268" rx="10.5" ry="8.5" fill="url(#skinGrad)" />
+                  </g>
+                </g>
+
+                <!-- Modern Slim Glasses -->
+                <g id="glasses">
+                  <rect x="421" y="258" width="28" height="20" rx="6" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.85"/>
+                  <rect x="451" y="258" width="28" height="20" rx="6" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.85"/>
+                  <!-- Bridge -->
+                  <path d="M 449 265 Q 450 263 451 265" stroke="#38bdf8" stroke-width="2"/>
+                  <!-- Temples -->
+                  <path d="M 421 266 L 406 264" stroke="#38bdf8" stroke-width="1.5"/>
+                  <path d="M 479 266 L 494 264" stroke="#38bdf8" stroke-width="1.5"/>
+                  <!-- Subtle Lens Glint -->
+                  <path d="M 425 262 L 434 262" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+                  <path d="M 455 262 L 464 262" stroke="#ffffff" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+                </g>
+
+                <!-- Nose -->
+                <path d="M 450 274 L 447 284 L 452 284" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+
+                <!-- Focused Smile / Concentrated Mouth -->
+                <path d="M 443 294 Q 450 299 457 294" stroke="#c2410c" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- ============================================== -->
+              <!-- THE DESK & MACBOOK SETUP                       -->
+              <!-- ============================================== -->
+              <!-- Desk Lamp Arm & Light Cone -->
+              <g class="desk-lamp">
+                <path d="M 230 460 Q 220 320 280 290" fill="none" stroke="#475569" stroke-width="7" stroke-linecap="round"/>
+                <circle cx="280" cy="290" r="7" fill="#64748b"/>
+                <path d="M 270 280 L 310 300 L 290 320 Z" fill="#3b82f6"/>
+                <!-- Glowing Lamp Cone -->
+                <polygon points="290,320 380,480 230,480" fill="#60a5fa" opacity="0.12"/>
+              </g>
+
+              <!-- Desk Surface -->
+              <g id="desk-surface">
+                <!-- Desk Top Shadow & Solid -->
+                <rect x="100" y="470" width="700" height="22" rx="6" fill="url(#deskGrad)" stroke="#334155" stroke-width="1.5"/>
+                <!-- Front Edge of Desk -->
+                <rect x="100" y="492" width="700" height="8" rx="2" fill="#090d16"/>
+                <!-- Desk Legs -->
+                <rect x="140" y="500" width="16" height="150" fill="#1e293b"/>
+                <rect x="744" y="500" width="16" height="150" fill="#1e293b"/>
+              </g>
+
+              <!-- STEAMING COFFEE MUG ON DESK -->
+              <g id="coffee-mug" class="interactive-mug" title="Powered by Caffeine">
+                <rect x="620" y="442" width="28" height="30" rx="4" fill="#f8fafc"/>
+                <path d="M 648 448 Q 658 456 648 464" fill="none" stroke="#f8fafc" stroke-width="3"/>
+                <!-- Steam lines with animation -->
+                <path class="steam steam-1" d="M 627 435 Q 631 425 628 415" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+                <path class="steam steam-2" d="M 635 435 Q 632 425 636 415" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+                <path class="steam steam-3" d="M 642 435 Q 646 425 643 415" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+              </g>
+
+              <!-- SMARTPHONE ON DESK -->
+              <g class="desk-phone">
+                <rect x="250" y="460" width="34" height="15" rx="3" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+                <circle cx="267" cy="467.5" r="2.5" fill="#38bdf8" class="pulse-notification"/>
+              </g>
+
+              <!-- ============================================== -->
+              <!-- THE MACBOOK PRO (LAPTOP)                      -->
+              <!-- ============================================== -->
+              <g id="macbook">
+                <!-- Screen Glow Cast onto Character -->
+                <polygon points="370,470 330,340 570,340 530,470" fill="url(#macScreenGlow)" />
+
+                <!-- Display Screen (Lid facing user) -->
+                <!-- Laptop Lid Bezel -->
+                <rect x="350" y="340" width="200" height="126" rx="8" fill="#0f172a" stroke="#475569" stroke-width="2"/>
+                
+                <!-- Retina Display Glass -->
+                <rect x="358" y="348" width="184" height="110" rx="4" fill="#090d16"/>
+                
+                <!-- Code on Laptop Screen -->
+                <g class="macbook-code-lines">
+                  <!-- VS Code Title Bar -->
+                  <circle cx="366" cy="355" r="2.5" fill="#ef4444"/>
+                  <circle cx="373" cy="355" r="2.5" fill="#f59e0b"/>
+                  <circle cx="380" cy="355" r="2.5" fill="#10b981"/>
+                  <rect x="395" y="353" width="40" height="4" rx="2" fill="#334155"/>
+                  
+                  <!-- Glowing Code Lines -->
+                  <rect x="366" y="365" width="45" height="3" rx="1.5" fill="#6366f1"/>
+                  <rect x="415" y="365" width="28" height="3" rx="1.5" fill="#38bdf8"/>
+                  
+                  <rect x="372" y="374" width="70" height="3" rx="1.5" fill="#10b981"/>
+                  <rect x="446" y="374" width="35" height="3" rx="1.5" fill="#f59e0b"/>
+                  
+                  <rect x="380" y="383" width="90" height="3" rx="1.5" fill="#e2e8f0"/>
+                  
+                  <rect x="372" y="392" width="60" height="3" rx="1.5" fill="#ec4899"/>
+                  <rect x="436" y="392" width="55" height="3" rx="1.5" fill="#818cf8"/>
+
+                  <rect x="380" y="401" width="40" height="3" rx="1.5" fill="#10b981"/>
+                  <rect x="424" y="401" width="68" height="3" rx="1.5" fill="#38bdf8"/>
+
+                  <rect x="366" y="410" width="30" height="3" rx="1.5" fill="#6366f1"/>
+                  
+                  <!-- Blinking Terminal Cursor on MacBook -->
+                  <rect class="screen-cursor" x="400" y="410" width="4" height="4" fill="#38bdf8"/>
+
+                  <!-- Mini Chart / Matrix Box on Display -->
+                  <rect x="475" y="420" width="60" height="32" rx="3" fill="#0f172a" stroke="#1e293b"/>
+                  <polyline points="480,445 492,435 505,440 518,430 530,425" fill="none" stroke="#10b981" stroke-width="1.5"/>
+                </g>
+
+                <!-- MacBook Hinge -->
+                <rect x="410" y="464" width="80" height="6" rx="2" fill="#334155"/>
+
+                <!-- MacBook Lower Deck / Keyboard Base -->
+                <polygon points="330,470 570,470 590,488 310,488" fill="url(#macMetal)" stroke="#64748b" stroke-width="1"/>
+                
+                <!-- Backlit Keyboard Well -->
+                <polygon points="350,472 550,472 565,483 335,483" fill="#0f172a"/>
+                
+                <!-- Keyboard Keys Grid simulation -->
+                <line x1="360" y1="476" x2="540" y2="476" stroke="#1e293b" stroke-width="2"/>
+                <line x1="355" y1="480" x2="545" y2="480" stroke="#1e293b" stroke-width="2"/>
+                
+                <!-- Force Touch Trackpad -->
+                <polygon points="425,484 475,484 478,487 422,487" fill="#94a3b8" opacity="0.6"/>
+
+                <!-- Front Notch / Display Thumb indent -->
+                <rect x="440" y="487" width="20" height="2" rx="1" fill="#475569"/>
+              </g>
+
+            </svg>
+          </div>
+
+          <!-- Interactive Control Hint Bar -->
+          <div class="interactive-hint">
+            <span class="hint-pulse"></span>
+            <i class="fa-solid fa-arrow-pointer"></i>
+            <span>Move your cursor around — the student's eyes track your position in real-time!</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 2: ABOUT ME, HOBBIES & FAVORITE GAMES   -->
+    <!-- ============================================== -->
+    <section id="about" class="section about-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <i class="fa-solid fa-user-astronaut"></i>
+            <span>Story & Lifestyle</span>
+          </div>
+          <h2 class="section-title">Beyond The <span class="gradient-text">Keyboard</span></h2>
+          <p class="section-subtitle">
+            Curious engineer by day, passionate gamer and creative thinker by night. Here is what keeps my engine running!
+          </p>
+        </div>
+
+        <!-- About Story Grid -->
+        <div class="about-grid">
+          
+          <div class="about-card story-card glass-panel">
+            <div class="card-icon-header">
+              <div class="icon-bubble primary">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <span class="card-badge">B.Tech 1st Year</span>
+            </div>
+            <h3 class="card-title">My Journey So Far</h3>
+            <p class="card-text">
+              Stepping into university as a 1st year B.Tech student has opened a whole universe of possibilities.
+              I am currently focusing on building strong computational foundations, mastering problem solving, 
+              and crafting real-world web experiences.
+            </p>
+            <div class="tech-stack-preview">
+              <span class="stack-badge"><i class="fa-brands fa-cuttlefish"></i> C / C++</span>
+              <span class="stack-badge"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="stack-badge"><i class="fa-brands fa-html5"></i> Web Dev</span>
+              <span class="stack-badge"><i class="fa-brands fa-git-alt"></i> Git</span>
+            </div>
+          </div>
+
+          <div class="about-card quote-card glass-panel">
+            <div class="card-icon-header">
+              <div class="icon-bubble accent">
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <span class="card-badge">Goal</span>
+            </div>
+            <h3 class="card-title">Engineering Philosophy</h3>
+            <p class="card-text quote-style">
+              "First solve the problem, then write the code. Strive to build things that are fast, intuitive, and visually memorable."
+            </p>
+            <div class="quote-author">
+              <div class="author-line"></div>
+              <span>Keep Learning, Keep Building</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- HOBBIES SECTION -->
+        <div class="hobbies-container">
+          <h3 class="subsection-title">
+            <i class="fa-solid fa-fire"></i>
+            <span>My Hobbies & Interests</span>
+          </h3>
+
+          <div class="hobbies-grid">
+            
+            <div class="hobby-card glass-panel">
+              <div class="hobby-icon-box ig-color">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <h4>Gaming & Esports</h4>
+              <p>Competitive shooter tournaments, tactical planning, and immersive story campaigns that challenge reflexes.</p>
+              <div class="hobby-tags">
+                <span>Reflexes</span>
+                <span>Teamwork</span>
+              </div>
+            </div>
+
+            <div class="hobby-card glass-panel">
+              <div class="hobby-icon-box code-color">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h4>Creative Coding</h4>
+              <p>Prototyping interactive widgets, exploring algorithms, and designing clean modern user interfaces.</p>
+              <div class="hobby-tags">
+                <span>UI/UX</span>
+                <span>JavaScript</span>
+              </div>
+            </div>
+
+            <div class="hobby-card glass-panel">
+              <div class="hobby-icon-box music-color">
+                <i class="fa-solid fa-headphones"></i>
+              </div>
+              <h4>Music & Lo-Fi Beats</h4>
+              <p>Fueling coding marathons with chill Lo-Fi, electronic synths, synthwave, and energetic gaming soundtracks.</p>
+              <div class="hobby-tags">
+                <span>Lo-Fi</span>
+                <span>Focus</span>
+              </div>
+            </div>
+
+            <div class="hobby-card glass-panel">
+              <div class="hobby-icon-box tech-color">
+                <i class="fa-solid fa-microchip"></i>
+              </div>
+              <h4>Tech & Gadget Hunting</h4>
+              <p>Keeping up with the latest PC hardware, Apple silicon breakthroughs, AI tools, and smart devices.</p>
+              <div class="hobby-tags">
+                <span>Silicon</span>
+                <span>AI</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- FAVORITE GAMES SHOWCASE                        -->
+        <!-- ============================================== -->
+        <div id="games" class="games-container">
+          <h3 class="subsection-title">
+            <i class="fa-solid fa-trophy"></i>
+            <span>Favorite Games Vault</span>
+          </h3>
+          <p class="subsection-desc">
+            Gaming fuels my strategic thinking and quick decision making. Here are my all-time favorites:
+          </p>
+
+          <div class="games-grid">
+            
+            <!-- Game 1: Valorant -->
+            <div class="game-card glass-panel">
+              <div class="game-banner val-bg">
+                <span class="game-tag">Tactical FPS</span>
+                <i class="fa-solid fa-crosshairs game-hero-icon"></i>
+              </div>
+              <div class="game-content">
+                <div class="game-header-row">
+                  <h4>Valorant</h4>
+                  <span class="game-rating"><i class="fa-solid fa-star"></i> 5.0</span>
+                </div>
+                <p class="game-desc">High stakes 5v5 tactical shooter with precise gunplay, team communications, and clutch moments.</p>
+                <div class="game-meta">
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Role: Duelist / Initiator</span>
+                  </div>
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-desktop"></i>
+                    <span>Platform: PC</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 2: GTA V -->
+            <div class="game-card glass-panel">
+              <div class="game-banner gta-bg">
+                <span class="game-tag">Open World</span>
+                <i class="fa-solid fa-car-side game-hero-icon"></i>
+              </div>
+              <div class="game-content">
+                <div class="game-header-row">
+                  <h4>Grand Theft Auto V</h4>
+                  <span class="game-rating"><i class="fa-solid fa-star"></i> 4.9</span>
+                </div>
+                <p class="game-desc">Unmatched open-world freedom, chaotic heists, driving physics, and Los Santos adventures.</p>
+                <div class="game-meta">
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-compass"></i>
+                    <span>Mode: Story & Online</span>
+                  </div>
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Action / Sandbox</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Game 3: BGMI / Minecraft -->
+            <div class="game-card glass-panel">
+              <div class="game-banner mc-bg">
+                <span class="game-tag">Battle Royale / Sandbox</span>
+                <i class="fa-solid fa-cubes game-hero-icon"></i>
+              </div>
+              <div class="game-content">
+                <div class="game-header-row">
+                  <h4>BGMI & Minecraft</h4>
+                  <span class="game-rating"><i class="fa-solid fa-star"></i> 4.8</span>
+                </div>
+                <p class="game-desc">From intense last-circle squad clutches with friends to crafting infinite redstone contraptions.</p>
+                <div class="game-meta">
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Squad Battles & Creative</span>
+                  </div>
+                  <div class="meta-pill">
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Hours of Fun</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- SECTION 3: CONTACT & SOCIAL HANDLES            -->
+    <!-- ============================================== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <div class="section-tag">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span>Get Connected</span>
+          </div>
+          <h2 class="section-title">Let's <span class="gradient-text">Link Up</span></h2>
+          <p class="section-subtitle">
+            Whether you want to team up in a hackathon, queue up for a game, or just talk tech, my inbox is always open!
+          </p>
+        </div>
+
+        <div class="contact-wrapper">
+          
+          <!-- SOCIAL MEDIA CARDS (Instagram, LinkedIn, Snapchat, etc.) -->
+          <div class="socials-column">
+            <h3 class="column-title">
+              <i class="fa-solid fa-share-nodes"></i>
+              <span>Official Social Channels</span>
+            </h3>
+
+            <!-- 1. Instagram Card -->
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-card social-ig glass-panel" id="link-instagram">
+              <div class="social-brand-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div class="social-info">
+                <span class="social-platform">Instagram</span>
+                <span class="social-handle" id="display-ig">@your_insta_handle</span>
+                <span class="social-action">Follow my photo dumps & stories <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <div class="social-glow"></div>
+            </a>
+
+            <!-- 2. LinkedIn Card -->
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-card social-linkedin glass-panel" id="link-linkedin">
+              <div class="social-brand-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              <div class="social-info">
+                <span class="social-platform">LinkedIn</span>
+                <span class="social-handle" id="display-linkedin">linkedin.com/in/your-profile</span>
+                <span class="social-action">Connect for professional updates <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <div class="social-glow"></div>
+            </a>
+
+            <!-- 3. Snapchat Card -->
+            <a href="https://snapchat.com" target="_blank" rel="noopener noreferrer" class="social-card social-snapchat glass-panel" id="link-snapchat">
+              <div class="social-brand-icon">
+                <i class="fa-brands fa-snapchat"></i>
+              </div>
+              <div class="social-info">
+                <span class="social-platform">Snapchat</span>
+                <span class="social-handle" id="display-snapchat">snapchat.com/add/your_snap</span>
+                <span class="social-action">Add for streaks & campus daily life <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <div class="social-glow"></div>
+            </a>
+
+            <!-- 4. GitHub Card -->
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-card social-github glass-panel" id="link-github">
+              <div class="social-brand-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+              <div class="social-info">
+                <span class="social-platform">GitHub</span>
+                <span class="social-handle" id="display-github">github.com/your-username</span>
+                <span class="social-action">Explore code repositories & repos <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              </div>
+              <div class="social-glow"></div>
+            </a>
+
+          </div>
+
+          <!-- INTERACTIVE MESSAGE FORM -->
+          <div class="form-column">
+            <div class="form-card glass-panel">
+              <h3 class="form-heading">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <span>Drop Me A Quick Message</span>
+              </h3>
+              <p class="form-subheading">Have an opportunity, question, or just saying hi? Leave a note below:</p>
+              
+              <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); window.handleFormSubmit();">
+                <div class="form-group">
+                  <label for="sender-name">Your Name</label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="sender-name" placeholder="e.g. Rahul Sharma" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-email">Your Email or Handle</label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" id="sender-email" placeholder="e.g. rahul@example.com or @handle" required />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="sender-msg">Your Message</label>
+                  <div class="input-with-icon">
+                    <i class="fa-solid fa-comment-dots icon-textarea"></i>
+                    <textarea id="sender-msg" rows="4" placeholder="What's on your mind? Let's build something cool together!" required></textarea>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">
+                  <span>Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+
+              <div class="form-success-toast" id="form-toast">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Thanks for reaching out! Message received loud and clear. 🚀</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <span class="footer-logo">&lt;Bhavya /&gt;</span>
+        <p>B.Tech 1st Year Engineering Portfolio • Crafted with passion & code.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#home" class="back-to-top" title="Back to top">
+          <i class="fa-solid fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
